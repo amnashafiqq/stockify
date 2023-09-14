@@ -33,7 +33,7 @@ class Signup (View):
 
 		if not error_message:
 			print(first_name, last_name, phone, email, password)
-			customer.password = make_password(customer.password)
+			customer.password = make_password(customer.password) #This line is responsible for hashing the user's password before storing it in the database. 
 			customer.register()
 			return redirect('homepage')
 		else:
@@ -63,6 +63,6 @@ class Signup (View):
 			error_message = 'Email must be 5 char long'
 		elif customer.isExists():
 			error_message = 'Email Address Already Registered..'
-		# saving
+		
 
 		return error_message

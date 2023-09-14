@@ -17,7 +17,7 @@ class Login(View):
 		customer = Customer.get_customer_by_email(email)
 		error_message = None
 		if customer:
-			flag = check_password(password, customer.password)
+			flag = check_password(password, customer.password) #function is a Django utility for securely checking password hashes.
 			if flag:
 				request.session['customer'] = customer.id
 

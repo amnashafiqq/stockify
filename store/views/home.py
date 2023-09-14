@@ -33,8 +33,7 @@ class Index(View):
 		return redirect('homepage')
 
 	def get(self, request):
-		# print()
-		return HttpResponseRedirect(f'/store{request.get_full_path()[1:]}')
+		return HttpResponseRedirect(f'/store{request.get_full_path()[1:]}') 
 
 
 def store(request):

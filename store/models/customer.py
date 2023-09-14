@@ -12,7 +12,7 @@ class Customer(models.Model):
 	def register(self):
 		self.save()
 
-	@staticmethod
+	@staticmethod #can be called on class not on instance
 	def get_customer_by_email(email):
 		try:
 			return Customer.objects.get(email=email)
