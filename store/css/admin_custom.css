@@ -1,0 +1,14 @@
+/* Change the background color of the admin header */
+#result_list {
+  background-color: #ff5733; /* Replace with your desired color code or name */
+}
+
+/* Change the text color of the admin header */
+#header h1 {
+  color: #ffffff; /* Replace with your desired color code or name */
+}
+
+.text{
+  color: palevioletred;
+
+}

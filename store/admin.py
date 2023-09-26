@@ -11,9 +11,20 @@ class AdminProduct(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name']
+    search_fields = ["name"]
+
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['customer', 'status', 'date']
+    list_filter = ['status', 'date']  
+    search_fields = ["customer"]
+    class Media:
+        css = {
+            'all': ('store/css/admin_custom.css',),  # Path to your custom CSS file
+        }
 
 # Register your models here.
 admin.site.register(Products,AdminProduct)
-admin.site.register(Category)
+admin.site.register(Category,CategoryAdmin)
 admin.site.register(Customer)
-admin.site.register(Order)
+admin.site.register(Order,OrderAdmin)
+
